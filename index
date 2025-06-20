@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quesería La Delicia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quesería La Tena</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#donde-encontrarnos">Dónde encontrarnos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+       ">
+        <h2>Bienvenidos a Quesería La Delicia</h2>
+        <p>La mejor selección de quesos artesanales.</p>
+        <img src="banner.jpg" alt="Banner de Quesería La Delicia">
+    </section>
+    <section id="nosotros">
+        <h2>Nosotros</h2>
+        <p>En Quesería La Delicia, nos dedicamos a la producción de quesos artesanales desde hace más de 20 años. Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.</p>
+    </section>
+    <section id="productos">
+        <h2>Productos</h2>
+        <ul>
+            <li>
+                <h3>Queso Manchego</h3>
+                <p>Un queso curado de sabor intenso y textura firme.</p>
+                <img src="manchego.jpg" alt="Queso Manchego">
+            </li>
+            <li>
+                <h3>Queso Brie</h3>
+                <p>Queso suave y cremoso, perfecto para aperitivos.</p>
+                <img src="brie.jpg" alt="Queso Brie">
+            </li>
+            <li>
+                <h3>Queso Azul</h3>
+                <p>Queso con vetas azules, de sabor fuerte y característico.</p>
+                <img src="azul.jpg" alt="Queso Azul">
+            </li>
+        </ul>
+    </section>
+    <section id="donde-encontrarnos">
+        <h2>Dónde encontrarnos</h2>
+        <p>Dirección: Calle de los Quesos, 123, Ciudad Queso</p>
+        <p>Horario: Lunes a Viernes de 9:00 a 18:00</p>
+    </section>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Teléfono: 123-456-789</p>
+        <p>Email: contacto@queserialadelicia.com</p>
+        <p>Redes sociales: Facebook, Instagram, Twitter</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Quesería La Delicia. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
