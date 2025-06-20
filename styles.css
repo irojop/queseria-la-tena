@@ -79,11 +79,25 @@ section img {
 
 .slider {
   position: relative;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 40px;
+}
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
-  display: none;
+  flex: 0 0 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .slide.active {
@@ -92,25 +106,19 @@ section img {
 
 .prev, .next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.6);
   color: white;
   border: none;
-  padding: 10px;
   cursor: pointer;
-  z-index: 10;
   font-size: 20px;
   border-radius: 50%;
+  z-index: 5;
 }
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
+.prev { left: 10px; }
+.next { right: 10px; }
 
 footer {
   background-color: #d4af37;
