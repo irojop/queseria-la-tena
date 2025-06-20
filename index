@@ -22,8 +22,8 @@
     <section id="nosotros">
         <h2>Nosotros</h2>
         <p>En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
-        Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.</p>
-        <img src="Imagenes/banner.jpg" alt="Banner de Quesos Tena">
+        Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.
+        <img src="Imagenes/banner.jpg" alt="Banner de Quesos Tena"></p>
     </section>
     <section id="productos">
         <h2>Productos</h2>
