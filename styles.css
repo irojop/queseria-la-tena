@@ -1,5 +1,5 @@
 body {
-  background-image: url('banner.jpg');
+  background-image: url('Imagenes/banner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,27 +69,44 @@ footer {
   width: 100%;
 }
 
+/* Estilos para el slider de productos */
 .slider {
   position: relative;
+  width: 100%;
   overflow: hidden;
-  max-width: 800px;
-  margin: auto;
 }
 
-.slide {
-  display: none;
-  text-align: center;
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-.slide.active {
-  display: block;
+.slider-item {
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
-.slide img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
 }
+
+.slider-arrow.left {
+  left: 10px;
+}
+
+.slider-arrow.right {
+  right: 10px;
+}
+
+
 
 @media (max-width: 768px) {
   nav ul {
