@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quesos Tena</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Quesos Tena</h1>
@@ -26,28 +28,45 @@
     <section id="nosotros">
         <h2>Nosotros</h2>
         <p>En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
-        Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.</p>
+            Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.</p>
     </section>
     <section id="productos">
         <h2>Productos</h2>
-        <ul>
-            <li>
+        <div class="slider">
+            <div class="slide active">
                 <h3>Queso Ranchero</h3>
                 <p>Un queso curado de sabor intenso y textura firme.</p>
                 <img src="Imagenes/ranchero.jpg" alt="Queso Ranchero">
-            </li>
-            <li>
+            </div>
+            <div class="slide">
                 <h3>Queso Brie</h3>
                 <p>Queso suave y cremoso, perfecto para aperitivos.</p>
                 <img src="Imagenes/brie.jpg" alt="Queso Brie">
-            </li>
-            <li>
+            </div>
+            <div class="slide">
                 <h3>Queso Azul</h3>
                 <p>Queso con vetas azules, de sabor fuerte y característico.</p>
                 <img src="Imagenes/azul.jpg" alt="Queso Azul">
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
+
+    <script>
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 4000);
+    </script>
+
     <section id="donde-encontrarnos">
         <h2>Dónde encontrarnos</h2>
         <p>Dirección: Guerrero, Chihuahua Carretera Cuauhtémoc-LaJunta</p>
@@ -63,4 +82,5 @@
         <p>&copy; 2025 Quesos La Tena. Todos los derechos reservados.</p>
     </footer>
 </body>
+
 </html>

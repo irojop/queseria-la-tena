@@ -80,3 +80,24 @@ footer {
     margin: 10px 0;
   }
 }
+.slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
