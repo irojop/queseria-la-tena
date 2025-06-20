@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Quesería La Tena</h1>
+        <h1>Quesos Tena</h1>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -21,9 +21,9 @@
     </header>
     <section id="nosotros">
         <h2>Nosotros</h2>
-        <p>En Quesería La Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
+        <p>En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
         Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.</p>
-        <img src="banner.jpg" alt="Banner de Quesería La Tena">
+        <img src="Imagenes/banner.jpg" alt="Banner de Quesos Tena">
     </section>
     <section id="productos">
         <h2>Productos</h2>
@@ -57,7 +57,7 @@
         <p>Redes sociales: Facebook</p>
     </section>
     <footer>
-        <p>&copy; 2025 Quesería La Tena. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Quesos Tena. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
