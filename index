@@ -21,7 +21,7 @@
     </header>
     <section id=" Quesería La Tena</h2>
         <p>La mejor selección de quesos artesanales.</p>
-        <img src="banner.jpg" alt="Banner de Quesería La Tena">
+        <img src="Imagenes/banner.jpg" alt="Banner de Quesería La Tena">
     </section>
     <section id="nosotros">
         <h2>Nosotros</h2>
