@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quesería La Tena</title>
+    <title>Quesos Tena</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -47,14 +47,14 @@
     </section>
     <section id="donde-encontrarnos">
         <h2>Dónde encontrarnos</h2>
-        <p>Dirección: Calle de los Quesos, 123, Ciudad Queso</p>
+        <p>Dirección: Guerrero, Chihuahua Carretera Cuauhtémoc-LaJunta</p>
         <p>Horario: Lunes a Viernes de 9:00 a 18:00</p>
     </section>
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>Teléfono: 123-456-789</p>
-        <p>Email: contacto@queserialatena.com</p>
-        <p>Redes sociales: Facebook, Instagram, Twitter</p>
+        <p>Teléfono: 635 199 19 54</p>
+        <p>Email: quesotena@hotmail.com</p>
+        <p>Redes sociales: Facebook</p>
     </section>
     <footer>
         <p>&copy; 2025 Quesería La Tena. Todos los derechos reservados.</p>
