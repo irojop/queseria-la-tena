@@ -21,7 +21,6 @@
     </header>
     <section id=" Quesería La Tena</h2>
         <p>La mejor selección de quesos artesanales.</p>
-        
     </section>
     <section id="nosotros">
         <h2>Nosotros</h2>
@@ -35,7 +34,7 @@
             <li>
                 <h3>Queso Ranchero</h3>
                 <p>Un queso curado de sabor intenso y textura firme.</p>
-                <img src="Imagenes/ranchero.jpg" alt="Queso Ranchero">
+                <img src="ranchero.jpg" alt="Queso Ranchero">
             </li>
             <li>
                 <h3>Queso Brie</h3>
