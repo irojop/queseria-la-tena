@@ -6,12 +6,12 @@
   <title>Quesos Tena</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container header-content">
       <h1>Quesos Tena</h1>
       <nav>
         <ul>
@@ -25,86 +25,89 @@
     </div>
   </header>
 
-  <main>
-    <section id="inicio">
+  <section id="inicio">
+    <div class="container">
       <h2>Bienvenidos a Quesos Tena</h2>
       <p>La mejor selección de quesos artesanales.</p>
       <img src="Imagenes/banner.jpg" alt="Banner de Quesería La Tena">
-    </section>
+    </div>
+  </section>
 
-    <section id="nosotros">
+  <section id="nosotros">
+    <div class="container">
       <h2>Nosotros</h2>
       <p>En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años. Nuestra calidad, respetando las tradiciones y el medio ambiente.</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="productos">
-  <div class="container">
-    <h2>Productos</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="Imagenes/ranchero.jpg" alt="Queso Ranchero">
-        <h3>Queso Ranchero</h3>
-        <p>Un queso curado de sabor intenso y textura firme.</p>
-      </div>
-      <div class="product-card">
-        <img src="Imagenes/brie.jpg" alt="Queso Brie">
-        <h3>Queso Brie</h3>
-        <p>Queso suave y cremoso, perfecto para aperitivos.</p>
-      </div>
-      <div class="product-card">
-        <img src="Imagenes/azul.jpg" alt="Queso Azul">
-        <h3>Queso Azul</h3>
-        <p>Queso con vetas azules, de sabor fuerte y característico.</p>
+  <section id="productos">
+    <div class="container">
+      <h2>Productos</h2>
+      <div class="slider" id="product-slider">
+        <button class="prev" id="prevBtn">❮</button>
+
+        <div class="slide">
+          <img src="Imagenes/ranchero.jpg" alt="Queso Ranchero">
+          <h3>Queso Ranchero</h3>
+          <p>Un queso curado de sabor intenso y textura firme.</p>
+        </div>
+
+        <div class="slide">
+          <img src="Imagenes/brie.jpg" alt="Queso Brie">
+          <h3>Queso Brie</h3>
+          <p>Queso suave y cremoso, perfecto para aperitivos.</p>
+        </div>
+
+        <div class="slide">
+          <img src="Imagenes/azul.jpg" alt="Queso Azul">
+          <h3>Queso Azul</h3>
+          <p>Queso con vetas azules, de sabor fuerte y característico.</p>
+        </div>
+
+        <button class="next" id="nextBtn">❯</button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-    <section id="donde-encontrarnos">
+  <section id="donde-encontrarnos">
+    <div class="container">
       <h2>Dónde encontrarnos</h2>
       <p><strong>Dirección:</strong> Guerrero, Chihuahua Carretera Cuauhtémoc-LaJunta</p>
       <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="contacto">
+  <section id="contacto">
+    <div class="container">
       <h2>Contacto</h2>
-      <p><strong>Teléfono:</strong> 📞 635 199 1954</p>
-      <p><strong>Email:</strong> ✉️ <a href="mailto:quesotena@hotmail.com">quesotena@hotmail.com</a></p>
-      <p><strong>Redes sociales:</strong> 📘 <a href="#">Facebook</a></p>
-    </section>
-  </main>
+      <p>📞 <strong>Teléfono:</strong> 635 199 1954</p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:quesotena@hotmail.com">quesotena@hotmail.com</a></p>
+      <p>📘 <strong>Facebook:</strong> <a href="#">Quesos Tena</a></p>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
+    <div class="container">
+      <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      let current = 0;
-      const slides = document.querySelectorAll('.slide');
-      const prev = document.querySelector('.prev');
-      const next = document.querySelector('.next');
+      const slider = document.getElementById("product-slider");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
 
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-        });
-      }
-
-      prev.addEventListener('click', () => {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
+      nextBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: 320, behavior: "smooth" });
       });
 
-      next.addEventListener('click', () => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+      prevBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: -320, behavior: "smooth" });
       });
 
       setInterval(() => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+        slider.scrollBy({ left: 320, behavior: "smooth" });
       }, 4000);
     });
   </script>
