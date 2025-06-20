@@ -21,12 +21,13 @@
     </header>
     <section id=" Quesería La Tena</h2>
         <p>La mejor selección de quesos artesanales.</p>
-        <img src="Imagenes/banner.jpg" alt="Banner de Quesería La Tena">
+        
     </section>
     <section id="nosotros">
         <h2>Nosotros</h2>
         <p>En Quesería La Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
         Nuestra misión es ofrecer productos de alta calidad, respetando las tradiciones y el medio ambiente.</p>
+        <img src="Imagenes/banner.jpg" alt="Banner de Quesería La Tena">
     </section>
     <section id="productos">
         <h2>Productos</h2>
