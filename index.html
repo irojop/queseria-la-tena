@@ -13,27 +13,29 @@
 </head>
 <script src="reveal.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("bgVideo");
-  const soundBtn = document.getElementById("soundToggle");
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.getElementById("bgVideo");
+        const soundBtn = document.getElementById("soundToggle");
 
-  soundBtn.addEventListener("click", () => {
-    video.muted = !video.muted;
-    soundBtn.textContent = video.muted ? "🔇" : "🔊";
-    video.play().catch(() => {});
-  });
+        soundBtn.addEventListener("click", () => {
+            video.muted = !video.muted;
+            soundBtn.textContent = video.muted ? "🔇" : "🔊";
+            video.play().catch(() => { });
+        });
 
-  video.addEventListener("click", () => {
-    // Si quieres hacer algo al hacer clic en el video
-  });
-});
+        video.addEventListener("click", () => {
+            // Si quieres hacer algo al hacer clic en el video
+        });
+    });
 </script>
+
 <body>
     </div>
     <header>
         <div class="container header-content">
+            <h1>Quesos Tena</h1>
             <nav>
-                <ul>
+                <ul id="navMenu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#productos">Productos</a></li>
@@ -41,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     <section id="inicio">
@@ -113,21 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
 
-            const revealOnScroll = () => {
-                const scrollY = window.scrollY + window.innerHeight * 0.85;
-                sections.forEach(section => {
-                    if (scrollY > section.offsetTop) {
-                        section.classList.add("visible");
-                    }
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // Opcional: cerrar menú al dar click en un enlace
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
                 });
-            };
-            window.addEventListener("scroll", revealOnScroll);
-            revealOnScroll(); // ejecuta al cargar
+            });
         });
     </script>
-</body>
 
+</body>
 </html>
