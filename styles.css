@@ -16,7 +16,7 @@ body {
 header {
     background-color: #d4af37;
     color: white;
-    padding: 15px 0;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -33,7 +33,6 @@ body{
     align-items: center;
     max-width: 1000px;
     margin: auto;
-    padding: 0 20px;
 }
 
 header h1 {
@@ -48,7 +47,7 @@ nav ul {
     list-style: none;
     display: flex;
     margin: 0;
-    gap: 15px;
+    gap: 20px;
     padding: 0;
 }
 
@@ -56,7 +55,7 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -73,7 +72,6 @@ nav ul li a:hover {
 }
 
 .menu-toggle span {
-    display: block;
     height: 3px;
     background: white;
     border-radius: 2px;
@@ -256,12 +254,12 @@ footer {
         padding: 10px;
     }
 }
-
+/*Moviles*/
 @media (max-width: 768px) {
-    .header-content {
+    /*.header-content {
         flex-direction: column;
         text-align: center;
-    }
+    }*/
 
     nav ul {
         position: fixed;
