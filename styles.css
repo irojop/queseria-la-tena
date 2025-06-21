@@ -53,7 +53,7 @@ nav ul li a:hover {
     color: #333;
 }
 
-section {
+/*section {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
     margin: 30px 0;
@@ -64,7 +64,7 @@ section {
 section h2 {
     color: #d4af37;
     font-family: 'Playfair Display', serif;
-}
+}*/
 
 #inicio {
   text-align: center;
@@ -120,10 +120,11 @@ section h2 {
 }
 section {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(50px);
   transition: all 0.6s ease-out;
+  will-change: opacity, transform;
 }
-
+/* Cuando se revela la sección */
 section.visible {
   opacity: 1;
   transform: translateY(0);
