@@ -296,16 +296,6 @@ footer {
   object-fit: cover;
 }
 
-.hero-video video.expanded {
-  width: 100vw;
-  height: 100vh;
-  border-radius: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
 .sound-btn {
   position: absolute;
   bottom: 20px;
