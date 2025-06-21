@@ -13,20 +13,24 @@
 </head>
 <script src="reveal.js"></script>
 <script>
-  const video = document.getElementById('bgVideo');
-  const soundBtn = document.getElementById('soundToggle');
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById('bgVideo');
+    const soundBtn = document.getElementById('soundToggle');
 
-  soundBtn.addEventListener('click', () => {
-    if (video.muted) {
-      video.pause();          // pausa para evitar conflicto de estado
-      video.muted = false;    // desactiva silencio
-      video.currentTime = 0;  // reinicia desde el principio (opcional)
-      video.play();           // vuelve a reproducir
-      soundBtn.textContent = '🔊';
-    } else {
-      video.muted = true;
-      soundBtn.textContent = '🔇';
-    }
+    soundBtn.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        video.currentTime = video.currentTime; // Reinicia decodificación con audio
+        video.play().then(() => {
+          soundBtn.textContent = '🔊';
+        }).catch((err) => {
+          console.error('Error al reproducir con sonido:', err);
+        });
+      } else {
+        video.muted = true;
+        soundBtn.textContent = '🔇';
+      }
+    });
   });
 </script>
 <body>
