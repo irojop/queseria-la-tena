@@ -37,6 +37,7 @@
     <div class="container">
       <h2>Nosotros</h2>
       <p>En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años. Nuestra calidad, respetando las tradiciones y el medio ambiente.</p>
+      <img src="Imagenes/fabrica.jpg" alt="Nuestra fábrica artesanal" class="nosotros-img">
     </div>
   </section>
 
@@ -69,8 +70,8 @@
   <section id="donde-encontrarnos">
     <div class="container">
       <h2>Dónde encontrarnos</h2>
-      <p><strong>Dirección:</strong> Guerrero, Chihuahua Carretera Cuauhtémoc-LaJunta</p>
-      <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00</p>
+      <p><strong>Dirección:</strong> 31693 La Tena de Arriba, Chih. Carretera Cuauhtémoc-LaJunta</p>
+      <p><strong>Horario:</strong> Lunes a Sábado de 8:00 a 16:00</p>
     </div>
   </section>
 
@@ -79,7 +80,7 @@
       <h2>Contacto</h2>
       <p>📞 <strong>Teléfono:</strong> 635 199 1954</p>
       <p>📧 <strong>Email:</strong> <a href="mailto:quesotena@hotmail.com">quesotena@hotmail.com</a></p>
-      <p>📘 <strong>Facebook:</strong> <a href="#">Quesos Tena</a></p>
+      <p>📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/QuesoTenaRanchero/?locale=es_LA">Quesos Tena</a></p>
     </div>
   </section>
 
@@ -88,24 +89,21 @@
       <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
     </div>
   </footer>
-
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const slider = document.getElementById("product-slider");
-      const nextBtn = document.getElementById("nextBtn");
-      const prevBtn = document.getElementById("prevBtn");
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
 
-      nextBtn.addEventListener("click", () => {
-        slider.scrollBy({ left: 320, behavior: "smooth" });
-      });
+      const revealOnScroll = () => {
+        const scrollY = window.scrollY + window.innerHeight * 0.85;
+        sections.forEach(section => {
+          if (scrollY > section.offsetTop) {
+            section.classList.add("visible");
+          }
+        });
+      };
 
-      prevBtn.addEventListener("click", () => {
-        slider.scrollBy({ left: -320, behavior: "smooth" });
-      });
-
-      setInterval(() => {
-        slider.scrollBy({ left: 320, behavior: "smooth" });
-      }, 4000);
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll(); // ejecuta al cargar
     });
   </script>
 </body>

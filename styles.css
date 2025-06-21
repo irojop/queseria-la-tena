@@ -66,7 +66,70 @@ section h2 {
     font-family: 'Playfair Display', serif;
 }
 
-section p {
+#inicio {
+  text-align: center;
+  background: linear-gradient(to bottom, #fff7e6, #fdfaf6);
+  padding: 60px 20px;
+}
+
+#inicio img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+#nosotros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.8;
+}
+
+#nosotros p {
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+#donde-encontrarnos p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+#donde-encontrarnos {
+  text-align: center;
+}
+
+#donde-encontrarnos::before {
+  content: \"📍\";
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+#contacto {
+  text-align: center;
+}
+
+#contacto a {
+  color: #d4af37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#contacto a:hover {
+  text-decoration: underline;
+}
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*section p {
     line-height: 1.6;
 }
 
@@ -75,7 +138,7 @@ section img {
     height: auto;
     border-radius: 8px;
     margin-top: 15px;
-}
+}*/
 
 .slider-wrapper {
     position: relative;
