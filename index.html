@@ -13,34 +13,26 @@
 </head>
 <script src="reveal.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const video = document.getElementById('bgVideo');
-    const soundBtn = document.getElementById('soundToggle');
-
-    soundBtn.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false;
-        video.currentTime = video.currentTime; // Reinicia decodificación con audio
-        video.play().then(() => {
-          soundBtn.textContent = '🔊';
-        }).catch((err) => {
-          console.error('Error al reproducir con sonido:', err);
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.getElementById('bgVideo');
+        const soundBtn = document.getElementById('soundToggle');
+        soundBtn.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                video.currentTime = video.currentTime; // Reinicia decodificación con audio
+                video.play().then(() => {
+                    soundBtn.textContent = '🔊';
+                }).catch((err) => {
+                    console.error('Error al reproducir con sonido:', err);
+                });
+            } else {
+                video.muted = true;
+                soundBtn.textContent = '🔇';
+            }
         });
-      } else {
-        video.muted = true;
-        soundBtn.textContent = '🔇';
-      }
     });
-  });
 </script>
 <body>
-    <div class="hero-video">
-  <video id="bgVideo" autoplay muted loop playsinline>
-    <source src="Videos/QuesosTena.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video.
-  </video>
-  <button id="soundToggle" class="sound-btn">🔇</button>
-</div>
     </div>
     <header>
         <div class="container header-content">
@@ -58,6 +50,13 @@
     <section id="inicio">
         <div class="container">
             <h2>Bienvenidos a Quesos Tena</h2>
+            <div class="hero-video">
+                <video id="bgVideo" autoplay muted loop playsinline>
+                    <source src="Videos/QuesosTena.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <button id="soundToggle" class="sound-btn">🔇</button>
+            </div>
             <p>La mejor selección de quesos artesanales.</p>
             <img src="Imagenes/fabrica.jpg" alt="Banner de Quesería La Tena">
         </div>
