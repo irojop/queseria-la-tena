@@ -121,7 +121,12 @@ section img {
     font-size: 1.1rem;
     max-width: 800px;
 }
-
+#nosotros img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 20px;
+}
 /* Dónde encontrarnos */
 #donde-encontrarnos {
     text-align: center;
