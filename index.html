@@ -17,13 +17,15 @@
   const soundBtn = document.getElementById('soundToggle');
 
   soundBtn.addEventListener('click', () => {
-    video.muted = !video.muted;
-
     if (video.muted) {
-      soundBtn.textContent = '🔇';
-    } else {
-      video.play();
+      video.pause();          // pausa para evitar conflicto de estado
+      video.muted = false;    // desactiva silencio
+      video.currentTime = 0;  // reinicia desde el principio (opcional)
+      video.play();           // vuelve a reproducir
       soundBtn.textContent = '🔊';
+    } else {
+      video.muted = true;
+      soundBtn.textContent = '🔇';
     }
   });
 </script>
