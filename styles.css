@@ -24,9 +24,11 @@ header {
     z-index: 9999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-body{
+
+body {
     padding-top: 60px;
 }
+
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -61,6 +63,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #333;
 }
+
 /* Botón hamburguesa - oculto por defecto */
 .menu-toggle {
     display: none;
@@ -73,8 +76,9 @@ nav ul li a:hover {
 
 .menu-toggle span {
     height: 3px;
-    /*background: white;*/
+    background: black;
     border-radius: 2px;
+    display: block;
 }
 
 /* Secciones */
@@ -254,19 +258,23 @@ footer {
         padding: 10px;
     }
 }
+
 /*Moviles*/
 @media (max-width: 768px) {
-    /*.header-content {
+    .container{
+        padding: 15px;
+    }
+    .header-content {
         flex-direction: column;
         text-align: center;
-    }*/
+    }
 
     nav ul {
         position: fixed;
         top: 60px;
         left: 0;
         width: 100%;
-        height: calc(100%-60px);
+        height: calc(100% - 60px);
         background-color: #d4af37;
         flex-direction: column;
         gap: 20px;
@@ -274,13 +282,16 @@ footer {
         margin: 0;
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
-        z-index: 9998;
+        z-index: 10000;
     }
+
     nav ul.active {
         transform: translateX(0);
     }
-    .menu-toggle{
+
+    .menu-toggle {
         display: flex;
+        z-index: 10001;
     }
 
     .prev,
@@ -312,37 +323,28 @@ footer {
         width: 200px;
     }
 }
+
 .hero-video {
-  width: 100%;
-  max-width: 800px;   /* para limitar un poco el ancho en pantallas grandes */
-  margin: 20px auto;  /* espacio arriba y abajo, y centrado */
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 .hero-video video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  cursor: pointer;
-  object-fit: cover;
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .sound-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  cursor: pointer;
-  outline: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
 }
-

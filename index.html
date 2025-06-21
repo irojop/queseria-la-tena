@@ -28,7 +28,6 @@
         });
     });
 </script>
-
 <body>
     <header>
         <div class="container header-content">
@@ -56,7 +55,7 @@
                     <source src="Videos/QuesosTena.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de video.
                 </video>
-                <button id="soundToggle" class="sound-btn">🔇</button>
+                <button id="soundToggle" class="sound-btn" aria-label="Activar/desactivar sonido">🔇</button>
             </div>
             <p>La mejor selección de quesos artesanales.</p>
             <img src="Imagenes/fabrica.jpg" alt="Banner de Quesería La Tena">
@@ -117,24 +116,41 @@
             <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+     <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const video = document.getElementById("bgVideo");
+      const soundBtn = document.getElementById("soundToggle");
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
+      soundBtn.addEventListener("click", () => {
+        video.muted = !video.muted;
+        soundBtn.textContent = video.muted ? "🔇" : "🔊";
+        video.play().catch(() => {});
+      });
 
-    // Cerrar menú al clicar un enlace
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Accesibilidad con teclado
+      menuToggle.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navMenu.classList.toggle("active");
+          menuToggle.classList.toggle("active");
+        }
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
       });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
