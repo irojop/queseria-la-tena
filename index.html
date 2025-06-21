@@ -16,7 +16,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const video = document.getElementById("bgVideo");
   const soundBtn = document.getElementById("soundToggle");
-  const closeBtn = document.getElementById("closeVideo");
 
   soundBtn.addEventListener("click", () => {
     video.muted = !video.muted;
@@ -26,13 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   video.addEventListener("click", () => {
     video.classList.add("expanded");
-    closeBtn.style.display = "flex";
-  });
-
-  closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    video.classList.remove("expanded");
-    closeBtn.style.display = "none";
   });
 });
 </script>
@@ -60,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     Tu navegador no soporta la reproducción de video.
                 </video>
                 <button id="soundToggle" class="sound-btn">🔇</button>
-                <button id="closeVideo" class="close-btn" style="display: none;">❌</button>
             </div>
             <p>La mejor selección de quesos artesanales.</p>
             <img src="Imagenes/fabrica.jpg" alt="Banner de Quesería La Tena">

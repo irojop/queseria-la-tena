@@ -310,17 +310,3 @@ footer {
   z-index: 1010;
 }
 
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 24px;
-  display: none;
-  cursor: pointer;
-  z-index: 1010;
-}
