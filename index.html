@@ -13,43 +13,29 @@
 </head>
 <script src="reveal.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const video = document.getElementById('bgVideo');
-    const soundBtn = document.getElementById('soundToggle');
-    const closeBtn = document.getElementById('closeVideo');
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("bgVideo");
+  const soundBtn = document.getElementById("soundToggle");
+  const closeBtn = document.getElementById("closeVideo");
 
-    // Alternar sonido
-    soundBtn.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false;
-        video.currentTime = video.currentTime;
-        video.play().then(() => {
-          soundBtn.textContent = '🔊';
-        }).catch((err) => {
-          console.error('Error al reproducir con sonido:', err);
-        });
-      } else {
-        video.muted = true;
-        soundBtn.textContent = '🔇';
-      }
-    });
-
-    // Expandir video al hacer clic
-    video.addEventListener('click', () => {
-      video.classList.add('expanded');
-      closeBtn.style.display = 'flex';
-    });
-
-    // Botón para cerrar video expandido
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita que el clic también dispare el video
-      video.classList.remove('expanded');
-      closeBtn.style.display = 'none';
-    });
+  soundBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    soundBtn.textContent = video.muted ? "🔇" : "🔊";
+    video.play().catch(() => {});
   });
+
+  video.addEventListener("click", () => {
+    video.classList.add("expanded");
+    closeBtn.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    video.classList.remove("expanded");
+    closeBtn.style.display = "none";
+  });
+});
 </script>
-
-
 <body>
     </div>
     <header>
