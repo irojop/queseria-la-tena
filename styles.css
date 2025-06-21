@@ -278,35 +278,36 @@ footer {
     }
 }
 .hero-video {
-  position: relative;
   width: 100%;
-  height: 100vh;
+  max-width: 800px;   /* para limitar un poco el ancho en pantallas grandes */
+  margin: 20px auto;  /* espacio arriba y abajo, y centrado */
+  position: relative;
+  border-radius: 12px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .hero-video video {
-  width: 300px;
+  width: 100%;
   height: auto;
+  display: block;
   border-radius: 12px;
-  transition: all 0.6s ease;
   cursor: pointer;
   object-fit: cover;
 }
 
 .sound-btn {
   position: absolute;
-  bottom: 20px;
-  right: 50px;
-  background: rgba(0, 0, 0, 0.6);
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.5);
   color: white;
+  border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
   cursor: pointer;
-  z-index: 1010;
+  outline: none;
 }
 
