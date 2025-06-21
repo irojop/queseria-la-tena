@@ -17,9 +17,14 @@
   const soundBtn = document.getElementById('soundToggle');
 
   soundBtn.addEventListener('click', () => {
-    video.muted = false;
-    video.play();
-    soundBtn.style.display = 'none'; // Oculta el botón después de activar sonido
+    video.muted = !video.muted;
+
+    if (video.muted) {
+      soundBtn.textContent = '🔇';
+    } else {
+      video.play();
+      soundBtn.textContent = '🔊';
+    }
   });
 </script>
 <body>
@@ -49,7 +54,7 @@
             <source src="Videos/QuesosTena.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de video.
         </video>
-        <button id="soundToggle" class="sound-btn">🔊 Activar sonido</button>
+        <button id="soundToggle" class="sound-btn">🔇</button>
     </div>
     </section>
     <section id="nosotros">
