@@ -1,5 +1,3 @@
-/* Estilos base: ya están bien */
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #fdfaf6;
@@ -291,11 +289,11 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
   transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  object-position: center;
   z-index: -1;
+  pointer-events: none;
 }
