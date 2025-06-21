@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quesos Tena - Productos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <nav>
+        <ul>
+          <li><a href="inicio.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html" class="active">Productos</a></li>
+          <li><a href="donde-encontrarnos.html">Dónde encontrarnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="productos">
+    <div class="container">
+      <h2>Productos</h2>
+      <div class="slider-wrapper">
+        <button class="prev" id="prevBtn">❮</button>
+        <div class="slider" id="product-slider">
+          <div class="slide">
+            <img src="Imagenes/ranchero.jpg" alt="Queso Ranchero" />
+            <h3>Queso Ranchero</h3>
+            <p>Un queso curado de sabor intenso y textura firme.</p>
+          </div>
+          <div class="slide">
+            <img src="Imagenes/brie.jpg" alt="Queso Brie" />
+            <h3>Queso Brie</h3>
+            <p>Queso suave y cremoso, perfecto para aperitivos.</p>
+          </div>
+          <div class="slide">
+            <img src="Imagenes/azul.jpg" alt="Queso Azul" />
+            <h3>Queso Azul</h3>
+            <p>Queso con vetas azules, de sabor fuerte y característico.</p>
+          </div>
+        </div>
+        <button class="next" id="nextBtn">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="reveal.js"></script>
+  <script>
+    // Aquí deberás agregar el script para slider si tienes funcionalidad
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const revealOnScroll = () => {
+        const scrollY = window.scrollY + window.innerHeight * 0.85;
+        sections.forEach((section) => {
+          if (scrollY > section.offsetTop) {
+            section.classList.add("visible");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
+</body>
+</html>

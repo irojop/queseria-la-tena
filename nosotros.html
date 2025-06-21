@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quesos Tena - Nosotros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <nav>
+        <ul>
+          <li><a href="inicio.html">Inicio</a></li>
+          <li><a href="nosotros.html" class="active">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="donde-encontrarnos.html">Dónde encontrarnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="nosotros">
+    <div class="container">
+      <h2>Nosotros</h2>
+      <p>
+        En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
+        Nuestra calidad, respetando las tradiciones y el medio ambiente.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="reveal.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const revealOnScroll = () => {
+        const scrollY = window.scrollY + window.innerHeight * 0.85;
+        sections.forEach((section) => {
+          if (scrollY > section.offsetTop) {
+            section.classList.add("visible");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
+</body>
+</html>
