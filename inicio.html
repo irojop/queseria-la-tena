@@ -13,19 +13,24 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-content">
-      <nav>
-        <ul>
-          <li><a href="inicio.html" class="active">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="productos.html">Productos</a></li>
-          <li><a href="donde-encontrarnos.html">Dónde encontrarnos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+   <header>
+        <div class="container header-content">
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="inicio.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="donde-encontrarnos.html">Dónde encontrarnos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
   <section id="inicio">
     <div class="container">
@@ -36,7 +41,6 @@
           Tu navegador no soporta la reproducción de video.
         </video>
         <button id="soundToggle" class="sound-btn">🔇</button>
-        <button id="closeVideo" class="close-btn" style="display: none;">❌</button>
       </div>
       <p>La mejor selección de quesos artesanales.</p>
       <img src="Imagenes/fabrica.jpg" alt="Banner de Quesería La Tena" />
