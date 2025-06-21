@@ -53,7 +53,7 @@ nav ul li a:hover {
     color: #333;
 }
 
-/*section {
+section {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
     margin: 30px 0;
@@ -64,7 +64,7 @@ nav ul li a:hover {
 section h2 {
     color: #d4af37;
     font-family: 'Playfair Display', serif;
-}*/
+}
 
 #inicio {
   text-align: center;
@@ -130,7 +130,7 @@ section.visible {
   transform: translateY(0);
 }
 
-/*section p {
+section p {
     line-height: 1.6;
 }
 
@@ -139,7 +139,7 @@ section img {
     height: auto;
     border-radius: 8px;
     margin-top: 15px;
-}*/
+}
 
 .slider-wrapper {
     position: relative;
