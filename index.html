@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,23 +11,23 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<!--<script src="reveal.js"></script>-->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const video = document.getElementById("bgVideo");
         const soundBtn = document.getElementById("soundToggle");
-        if (soundBtn && video){
-        soundBtn.addEventListener("click", () => {
-            video.muted = !video.muted;
-            soundBtn.textContent = video.muted ? "🔇" : "🔊";
-            video.play().catch(() => { });
-        });
+        if (soundBtn && video) {
+            soundBtn.addEventListener("click", () => {
+                video.muted = !video.muted;
+                soundBtn.textContent = video.muted ? "🔇" : "🔊";
+                video.play().catch(() => { });
+            });
         }
         video.addEventListener("click", () => {
             // Si quieres hacer algo al hacer clic en el video
         });
     });
 </script>
+
 <body>
     <header>
         <div class="container header-content">
@@ -115,41 +116,42 @@
             <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
         </div>
     </footer>
-     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const video = document.getElementById("bgVideo");
-      const soundBtn = document.getElementById("soundToggle");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById("bgVideo");
+            const soundBtn = document.getElementById("soundToggle");
 
-      soundBtn.addEventListener("click", () => {
-        video.muted = !video.muted;
-        soundBtn.textContent = video.muted ? "🔇" : "🔊";
-        video.play().catch(() => {});
-      });
+            soundBtn.addEventListener("click", () => {
+                video.muted = !video.muted;
+                soundBtn.textContent = video.muted ? "🔇" : "🔊";
+                video.play().catch(() => { });
+            });
 
-      const menuToggle = document.getElementById("menuToggle");
-      const navMenu = document.getElementById("navMenu");
+            const menuToggle = document.getElementById("menuToggle");
+            const navMenu = document.getElementById("navMenu");
 
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-      });
+            menuToggle.addEventListener("click", () => {
+                navMenu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            });
 
-      // Accesibilidad con teclado
-      menuToggle.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          navMenu.classList.toggle("active");
-          menuToggle.classList.toggle("active");
-        }
-      });
+            // Accesibilidad con teclado
+            menuToggle.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    navMenu.classList.toggle("active");
+                    menuToggle.classList.toggle("active");
+                }
+            });
 
-      navMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-          menuToggle.classList.remove("active");
+            navMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    navMenu.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
 </body>
+
 </html>
