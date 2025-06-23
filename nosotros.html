@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quesos Tena - Nosotros</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-   <header>
-        <div class="container header-content">
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="donde-encontrarnos.html">Dónde encontrarnos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
+  <header>
+    <div class="container header-content">
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="donde-encontrarnos.html">Dónde encontrarnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
 
   <section id="nosotros">
     <div class="container">
@@ -62,28 +62,30 @@
       };
       window.addEventListener("scroll", revealOnScroll);
       revealOnScroll();
-
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
       menuToggle.addEventListener("click", () => {
-                navMenu.classList.toggle("active");
-                menuToggle.classList.toggle("active");
-            });
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
 
-            // Accesibilidad con teclado
-            menuToggle.addEventListener("keydown", (e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    navMenu.classList.toggle("active");
-                    menuToggle.classList.toggle("active");
-                }
-            });
+      // Accesibilidad con teclado
+      menuToggle.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navMenu.classList.toggle("active");
+          menuToggle.classList.toggle("active");
+        }
+      });
 
-            navMenu.querySelectorAll("a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    navMenu.classList.remove("active");
-                    menuToggle.classList.remove("active");
-                });
-            });
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
     });
   </script>
 </body>
+
 </html>
