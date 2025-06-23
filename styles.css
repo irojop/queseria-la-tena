@@ -337,7 +337,7 @@ footer {
     min-width: 100%;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    object-position: center top; /* Centra el contenido importante */
+    object-position: center center; /* Centra el contenido importante */
 }
 
 
