@@ -323,17 +323,14 @@ footer {
  .hero-video {
     position: relative;
     width: 100%;
-    margin: 20px auto;
+    height: 350px; /* altura fija del video */
     overflow: hidden;
-    border-radius: 12px;
-    max-height: none; /*quitar recorte  de video*/  
 }
 
 .hero-video video {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
     display: block;
 }
 
