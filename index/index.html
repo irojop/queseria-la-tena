@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quesos artesanales de alta calidad en La Tena. Conoce nuestros productos, historia y ubicación.">
+    <meta name="description"
+        content="Quesos artesanales de alta calidad en La Tena. Conoce nuestros productos, historia y ubicación.">
     <title>Quesos Tena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +14,7 @@
     <link rel="icon" href="/Imagenes/quesostena.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
     <header>
         <div class="container header-content">
@@ -23,11 +25,11 @@
             </div>
             <nav>
                 <ul id="navMenu">
-                    <li><a href="/index/">Inicio</a></li>
-                    <li><a href="/nosotros/">Nosotros</a></li>
-                    <li><a href="/productos/">Productos</a></li>
-                    <li><a href="/donde-encontrarnos/">Dónde encontrarnos</a></li>
-                    <li><a href="/contacto/">Contacto</a></li>
+                    <li><a href="/Index/">Inicio</a></li>
+                    <li><a href="/Nosotros/">Nosotros</a></li>
+                    <li><a href="/Productos/">Productos</a></li>
+                    <li><a href="/Donde-encontrarnos/">Dónde encontrarnos</a></li>
+                    <li><a href="/Contacto/">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,7 +41,8 @@
                 <source src="/Videos/QuesosTena.mp4" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
             </video>
-            <button id="soundToggle" class="sound-btn" aria-label="Activar/desactivar sonido" aria-pressed="false">🔇</button>
+            <button id="soundToggle" class="sound-btn" aria-label="Activar/desactivar sonido"
+                aria-pressed="false">🔇</button>
         </div>
         <div class="container">
             <p>La mejor selección de quesos artesanales.</p>
@@ -108,7 +111,7 @@
 
             soundBtn.addEventListener("click", () => {
                 video.muted = !video.muted;
-                soundBtn.setAttribute =("aria-pressed", !video.muted)
+                soundBtn.setAttribute = ("aria-pressed", !video.muted)
                 video.play().catch(() => { });
             });
 
@@ -163,6 +166,18 @@
 
             prevBtn.addEventListener('click', () => {
                 slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+            });
+           // Bloquear clic derecho y teclas de desarrollador
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.addEventListener('keydown', e => {
+                // Bloquear F12, Ctrl+Shift+I, Ctrl+U
+                if (
+                    e.key === 'F12' ||
+                    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                    (e.ctrlKey && e.key === 'u')
+                ) {
+                    e.preventDefault();
+                }
             });
         });
     </script>
