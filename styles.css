@@ -301,7 +301,7 @@ footer {
     }
     .hero-video
     {
-        height: 300px; /* Ajusta la altura para móviles */
+        height: 350px; /* Ajusta la altura para móviles */
     }   
 }
 
@@ -323,7 +323,7 @@ footer {
         width: 200px;
     }
     .hero-video {
-        height: 250px; /* Ajusta la altura para móviles pequeños */
+        height: 300px; /* Ajusta la altura para móviles pequeños */
     }
 }
 
@@ -346,7 +346,7 @@ footer {
     width: auto;
     height: auto;
     object-fit: cover;
-    object-position: center top; /* Ajusta el foco del recorte */
+    object-position: center 40%; /* Ajusta el foco del recorte */
     display: block;
 }
 
