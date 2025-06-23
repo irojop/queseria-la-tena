@@ -150,20 +150,18 @@
                 observer.observe(section);
             });
 
-            document.addEventListener("DOMContentLoaded", () => {
-                const slider = document.querySelector('.slider');
-                const prevBtn = document.querySelector('.prev');
-                const nextBtn = document.querySelector('.next');
+            const slider = document.querySelector('.slider');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
 
-                const slideWidth = slider.offsetWidth;
+            const slideWidth = slider.offsetWidth;
 
-                nextBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
-                });
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            });
 
-                prevBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
-                });
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
             });
         });
     </script>
