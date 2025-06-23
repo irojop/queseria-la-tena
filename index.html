@@ -12,22 +12,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const video = document.getElementById("bgVideo");
-        const soundBtn = document.getElementById("soundToggle");
-        if (soundBtn && video) {
-            soundBtn.addEventListener("click", () => {
-                video.muted = !video.muted;
-                soundBtn.textContent = video.muted ? "🔇" : "🔊";
-                video.play().catch(() => { });
-            });
-        }
-        video.addEventListener("click", () => {
-            // Si quieres hacer algo al hacer clic en el video
-        });
-    });
-</script>
     <header>
         <div class="container header-content">
             <nav>
