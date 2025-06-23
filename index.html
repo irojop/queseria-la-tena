@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="container header-content">
@@ -30,7 +31,7 @@
             </div>
         </div>
     </header>
-    <section id="inicio">
+    <section id="inicio" class="visible">
         <div class="container">
             <h2>Bienvenidos a Quesos Tena</h2>
             <div class="hero-video">
@@ -44,14 +45,14 @@
             <img src="Imagenes/fabrica.jpg" alt="Banner de Quesería La Tena">
         </div>
     </section>
-    <section id="nosotros">
+    <section id="nosotros" class="visible">
         <div class="container">
             <h2>Nosotros</h2>
             <p>En Quesos Tena, nos dedicamos a la producción de quesos artesanales desde hace más de 40 años.
                 Nuestra calidad, respetando las tradiciones y el medio ambiente.</p>
         </div>
     </section>
-    <section id="productos">
+    <section id="productos" class="visible">
         <div class="container">
             <h2>Productos</h2>
             <div class="slider-wrapper">
@@ -77,14 +78,14 @@
             </div>
         </div>
     </section>
-    <section id="donde-encontrarnos">
+    <section id="donde-encontrarnos" class="visible">
         <div class="container">
             <h2>Dónde encontrarnos</h2>
             <p><strong>Dirección:</strong> 31693 La Tena de Arriba, Chih. Carretera Cuauhtémoc-LaJunta</p>
             <p><strong>Horario:</strong> Lunes a Sábado de 8:00 a 16:00</p>
         </div>
     </section>
-    <section id="contacto">
+    <section id="contacto" class="visible">
         <div class="container">
             <h2>Contacto</h2>
             <p>📞 <strong>Teléfono:</strong> 635 199 1954</p>
@@ -132,6 +133,21 @@
                     navMenu.classList.remove("active");
                     menuToggle.classList.remove("active");
                 });
+            });
+            const sections = document.querySelectorAll("section");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
