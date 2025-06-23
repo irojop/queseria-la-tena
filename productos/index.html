@@ -117,18 +117,6 @@
             prevBtn.addEventListener('click', () => {
                 slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
             });
-             // Bloquear clic derecho y teclas de desarrollador
-            document.addEventListener('contextmenu', e => e.preventDefault());
-            document.addEventListener('keydown', e => {
-                // Bloquear F12, Ctrl+Shift+I, Ctrl+U
-                if (
-                    e.key === 'F12' ||
-                    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
-                    (e.ctrlKey && e.key === 'u')
-                ) {
-                    e.preventDefault();
-                }
-            });
     });
   </script>
 </body>
