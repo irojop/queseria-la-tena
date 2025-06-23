@@ -146,6 +146,13 @@ section img {
     margin-top: 20px;
 }
 
+/* Productos */
+#productos {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 /* Dónde encontrarnos */
 #donde-encontrarnos {
     text-align: center;
@@ -181,15 +188,17 @@ section img {
 /* Carrusel slider */
 .slider-wrapper {
     position: relative;
+    width: 100%;
     overflow: hidden;
 }
 
 .slider {
     display: flex;
-    gap: 20px;
+    transition: transform 0.5s ease;
+    width: 100%;
+    scroll-snap-type: x mandatory; /* ✅ ayuda en móviles */
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 10px 0;
 }
 
 .slider::-webkit-scrollbar {
@@ -197,14 +206,11 @@ section img {
 }
 
 .slide {
-    flex: 0 0 auto;
-    width: 300px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
+    flex: 0 0 100%; /* ✅ solo uno a la vez */
+    scroll-snap-align: center;
+    max-width: 100%;
     box-sizing: border-box;
+    padding: 20px;
 }
 
 .slide img {

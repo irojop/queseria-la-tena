@@ -34,12 +34,12 @@
     <section id="inicio" class="visible">
         <h2>Bienvenidos a Quesos Tena</h2>
         <div class="hero-video">
-                <video id="bgVideo" autoplay muted loop playsinline>
-                    <source src="Videos/QuesosTena.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-                <button id="soundToggle" class="sound-btn" aria-label="Activar/desactivar sonido">🔇</button>
-            </div>
+            <video id="bgVideo" autoplay muted loop playsinline>
+                <source src="Videos/QuesosTena.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            <button id="soundToggle" class="sound-btn" aria-label="Activar/desactivar sonido">🔇</button>
+        </div>
         <div class="container">
             <p>La mejor selección de quesos artesanales.</p>
             <img src="Imagenes/fabrica.jpg" alt="Banner de Quesería La Tena">
@@ -148,6 +148,22 @@
 
             sections.forEach(section => {
                 observer.observe(section);
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const slider = document.querySelector('.slider');
+                const prevBtn = document.querySelector('.prev');
+                const nextBtn = document.querySelector('.next');
+
+                const slideWidth = slider.offsetWidth;
+
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+                });
             });
         });
     </script>
