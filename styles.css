@@ -247,7 +247,7 @@ footer {
     margin-top: 40px;
 }
 
-/* 🟡 MEDIA QUERIES RESPONSIVAS */
+/* 🟡 MEDIA RESPONSIVAS */
 
 @media (max-width: 1024px) {
     .container {
@@ -299,6 +299,10 @@ footer {
     .slide {
         width: 250px;
     }
+    .hero-video
+    {
+        height: 300px; /* Ajusta la altura para móviles */
+    }   
 }
 
 @media (max-width: 480px) {
@@ -317,6 +321,9 @@ footer {
 
     .slide {
         width: 200px;
+    }
+    .hero-video {
+        height: 250px; /* Ajusta la altura para móviles pequeños */
     }
 }
 
