@@ -65,17 +65,22 @@
       <p>© 2025 Quesos Tena. Todos los derechos reservados.</p>
     </div>
   </footer>
-  <script>
+      <script>
         document.addEventListener("DOMContentLoaded", () => {
+            /*            Inicialización del video de fondo y botón de sonido */
             const video = document.getElementById("bgVideo");
             const soundBtn = document.getElementById("soundToggle");
 
             soundBtn.addEventListener("click", () => {
                 video.muted = !video.muted;
-                soundBtn.setAttribute("aria-pressed", !video.muted);
-                video.play().catch(() => { });
-            });
 
+                // Cambiar ícono
+                soundBtn.textContent = video.muted ? "🔇" : "🔊";
+
+                // Cambiar atributo aria-pressed correctamente
+                soundBtn.setAttribute("aria-pressed", !video.muted);
+            });
+            /*            Inicialización del menú de navegación */
             const menuToggle = document.getElementById("menuToggle");
             const navMenu = document.getElementById("navMenu");
 
@@ -92,7 +97,7 @@
                     menuToggle.classList.toggle("active");
                 }
             });
-
+            /*            Cierre del menú al hacer clic en un enlace */
             navMenu.querySelectorAll("a").forEach((link) => {
                 link.addEventListener("click", () => {
                     navMenu.classList.remove("active");
@@ -114,20 +119,47 @@
             sections.forEach(section => {
                 observer.observe(section);
             });
-
+            /*            Inicialización del slider de productos */
             const slider = document.querySelector('.slider');
             const prevBtn = document.querySelector('.prev');
             const nextBtn = document.querySelector('.next');
+            const indicatorsContainer = document.getElementById('sliderIndicators');
+            const slides = document.querySelectorAll('.slide');
+            const getSlideWidth = () => slides[0].offsetWidth;
+            let currentIndex = 0;
 
-            const getSlideWidth = () => slider.offsetWidth;
-
+            // Crear indicadores dinámicamente
+            slides.forEach((_, i) => {
+                const btn = document.createElement('button');
+                if (i === 0) btn.classList.add('active');
+                btn.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(btn);
+            });
+            /*            Actualización de indicadores del slider */
+            const updateIndicators = () => {
+                indicatorsContainer.querySelectorAll('button').forEach((btn, i) => {
+                    btn.classList.toggle('active', i === currentIndex);
+                });
+            };
+            /*            Función para ir a un slide específico */
+            const goToSlide = (index) => {
+                const offset = getSlideWidth() * index;
+                slider.scrollTo({ left: offset, behavior: 'smooth' });
+                currentIndex = index;
+                updateIndicators();
+            };
+            /*            Manejo de eventos para el slider */
             nextBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: getSlideWidth, behavior: 'smooth' });
+                slider.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
             });
-
             prevBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: -getSlideWidth, behavior: 'smooth' });
+                slider.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
             });
+            // Auto-slide cada 5 segundos
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                goToSlide(currentIndex);
+            }, 5000);
         });
     </script>
 </body>

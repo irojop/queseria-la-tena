@@ -79,6 +79,7 @@
                     </div>
                 </div>
                 <button class="next" id="nextBtn">❯</button>
+                <div class="slider-indicators" id="sliderIndicators"></div>
             </div>
         </div>
     </section>
@@ -162,16 +163,43 @@
             const slider = document.querySelector('.slider');
             const prevBtn = document.querySelector('.prev');
             const nextBtn = document.querySelector('.next');
+            const indicatorsContainer = document.getElementById('sliderIndicators');
+            const slides = document.querySelectorAll('.slide');
+            const getSlideWidth = () => slides[0].offsetWidth;
+            let currentIndex = 0;
 
-            const getSlideWidth = () => slider.offsetWidth;
-
+            // Crear indicadores dinámicamente
+            slides.forEach((_, i) => {
+                const btn = document.createElement('button');
+                if (i === 0) btn.classList.add('active');
+                btn.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(btn);
+            });
+            /*            Actualización de indicadores del slider */
+            const updateIndicators = () => {
+                indicatorsContainer.querySelectorAll('button').forEach((btn, i) => {
+                    btn.classList.toggle('active', i === currentIndex);
+                });
+            };
+            /*            Función para ir a un slide específico */
+            const goToSlide = (index) => {
+                const offset = getSlideWidth() * index;
+                slider.scrollTo({ left: offset, behavior: 'smooth' });
+                currentIndex = index;
+                updateIndicators();
+            };
+            /*            Manejo de eventos para el slider */
             nextBtn.addEventListener('click', () => {
                 slider.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
             });
-
             prevBtn.addEventListener('click', () => {
                 slider.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
             });
+            // Auto-slide cada 5 segundos
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                goToSlide(currentIndex);
+            }, 5000);
         });
     </script>
 </body>
