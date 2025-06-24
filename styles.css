@@ -334,6 +334,14 @@ footer {
         height: 380px; /* Ajusta la altura para móviles */
     }   
 }
+@media (max-width: 600px) {
+    .sound-btn {
+        bottom: 5px;
+        right: 5px;
+        font-size: 16px;
+        padding: 6px;
+    }
+}
 
 @media (max-width: 480px) {
     header h1 {
@@ -358,46 +366,34 @@ footer {
 }
 
 .hero-video {
-    position: relative;/*necesario para posicionar el botón dentro del video*/
-    width: 80%; /*Ajusta el ancho del video */
-    aspect-ratio: 16 / 9; /* Mantiene la relación de aspecto 16:9 */
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    border-radius: 12px; /* Bordes redondeados */
-    margin-bottom: 20px; /* Espacio debajo del video */
-    margin: 0 auto; /* Centra el video */
 }
 
 .hero-video video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /*width: 100%;/* Asegura que el video ocupe todo el ancho */
-    /*height: 100%;/* Asegura que el video ocupe todo el alto */
-    object-fit: contain; /* ✅ NO recorta nada */
-    object-position: center center;
-    border-radius: 12px;
-    display: block; /* Asegura que el video ocupe todo el espacio */
-    max-width: 100%; /* Asegura que el video no se desborde */
-    height: auto; /* Mantiene la altura proporcional */
+    width: 100%;
+    height: auto;
+    display: block;
 }
+
 .sound-btn {
     position: absolute;
-    bottom: 20px; /* Ajusta la posición vertical del botón */
-    /*top: 10px;/* Ajusta la posición vertical del botón */
-    right: 20px; /*distancia desde el borde derecho*/
-    background: rgba(0, 0, 0, 0.0.6);
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     border-radius: 50%;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 18px;
+    padding: 8px;
     cursor: pointer;
     z-index: 10;
     transition: background-color 0.3s;
 }
+
 .sound-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
