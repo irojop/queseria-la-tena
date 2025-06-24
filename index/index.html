@@ -166,11 +166,11 @@
             const getSlideWidth = () => slider.offsetWidth;
 
             nextBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: getSlideWidth, behavior: 'smooth' });
+                slider.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
             });
 
             prevBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: -getSlideWidth, behavior: 'smooth' });
+                slider.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
             });
         });
     </script>
