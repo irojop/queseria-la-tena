@@ -67,19 +67,6 @@
   </footer>
       <script>
         document.addEventListener("DOMContentLoaded", () => {
-            /*            Inicialización del video de fondo y botón de sonido */
-            const video = document.getElementById("bgVideo");
-            const soundBtn = document.getElementById("soundToggle");
-
-            soundBtn.addEventListener("click", () => {
-                video.muted = !video.muted;
-
-                // Cambiar ícono
-                soundBtn.textContent = video.muted ? "🔇" : "🔊";
-
-                // Cambiar atributo aria-pressed correctamente
-                soundBtn.setAttribute("aria-pressed", !video.muted);
-            });
             /*            Inicialización del menú de navegación */
             const menuToggle = document.getElementById("menuToggle");
             const navMenu = document.getElementById("navMenu");
