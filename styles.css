@@ -301,10 +301,10 @@ footer {
     }
 
     nav ul {
-        /*display: none; /* ocultamos el menú normal */
+        display: none; /* ocultamos el menú normal */
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0);
-        position: absolute;
+        position: relative;
         top: 60px;
         left: 20px;
         width: 200px;
