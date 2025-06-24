@@ -341,11 +341,12 @@ footer {
 
 .hero-video {
     position: relative;
-    width: 100%;
+    width: 80%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 20px;
+    margin: 0 auto; /* Centra el video */
 }
 
 .hero-video video {
