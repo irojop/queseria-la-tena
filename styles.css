@@ -303,7 +303,7 @@ footer {
     nav ul {
         display: none; /* ocultamos el menú normal */
         flex-direction: column;
-        background-color:  #d4af37;
+        background-color: black;
         position: absolute;
         top: 60px;
         left: 20px;
@@ -358,12 +358,15 @@ footer {
 }
 
 .hero-video {
-    position: relative;
-    width: 80%;
-    aspect-ratio: 16 / 9;
+    position: relative;/*necesario para posicionar el botón dentro del video*/
+    width: 80%; /*Ajusta el ancho del video */
+    aspect-ratio: 16 / 9; /* Mantiene la relación de aspecto 16:9 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    border-radius: 12px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo del video */
     margin: 0 auto; /* Centra el video */
 }
 
@@ -371,20 +374,30 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    /*width: 100%;/* Asegura que el video ocupe todo el ancho */
+    /*height: 100%;/* Asegura que el video ocupe todo el alto */
     object-fit: contain; /* ✅ NO recorta nada */
     object-position: center center;
     border-radius: 12px;
+    display: block; /* Asegura que el video ocupe todo el espacio */
+    max-width: 100%; /* Asegura que el video no se desborde */
+    height: auto; /* Mantiene la altura proporcional */
 }
 .sound-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.7);
+    bottom: 20px; /* Ajusta la posición vertical del botón */
+    /*top: 10px;/* Ajusta la posición vertical del botón */
+    right: 20px; /*distancia desde el borde derecho*/
+    background: rgba(0, 0, 0, 0.0.6);
+    color: white;
     border: none;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 20px;
+    padding: 10px;
     cursor: pointer;
     z-index: 10;
+    transition: background-color 0.3s;
+}
+.sound-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
